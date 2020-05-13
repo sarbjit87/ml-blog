@@ -1,1 +1,1 @@
-Sitemap: https://mlblog.singhsarbjit.com/ml-blog/sitemap.xml
+Sitemap: https://mlblog.singhsarbjit.com/sitemap.xml

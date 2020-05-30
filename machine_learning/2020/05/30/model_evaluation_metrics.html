@@ -3,34 +3,34 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | Machine Learning Blog</title>
+<title>Evaluation metrics for Linear Regression | Machine Learning Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Evaluation metrics for Linear Regression" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Blog to share machine learning posts" />
 <meta property="og:description" content="Blog to share machine learning posts" />
-<link rel="canonical" href="https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html" />
-<meta property="og:url" content="https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html" />
+<link rel="canonical" href="https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html" />
+<meta property="og:url" content="https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html" />
 <meta property="og:site_name" content="Machine Learning Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-05-29T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-05-30T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Blog to share machine learning posts","mainEntityOfPage":{"@type":"WebPage","@id":"https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html"},"@type":"BlogPosting","url":"https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html","headline":"Title","dateModified":"2020-05-29T00:00:00-05:00","datePublished":"2020-05-29T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"description":"Blog to share machine learning posts","mainEntityOfPage":{"@type":"WebPage","@id":"https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html"},"@type":"BlogPosting","url":"https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html","headline":"Evaluation metrics for Linear Regression","dateModified":"2020-05-30T00:00:00-05:00","datePublished":"2020-05-30T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mlblog.singhsarbjit.com/feed.xml" title="Machine Learning Blog" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | Machine Learning Blog</title>
+<title>Evaluation metrics for Linear Regression | Machine Learning Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Evaluation metrics for Linear Regression" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Blog to share machine learning posts" />
 <meta property="og:description" content="Blog to share machine learning posts" />
-<link rel="canonical" href="https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html" />
-<meta property="og:url" content="https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html" />
+<link rel="canonical" href="https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html" />
+<meta property="og:url" content="https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html" />
 <meta property="og:site_name" content="Machine Learning Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-05-29T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-05-30T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Blog to share machine learning posts","mainEntityOfPage":{"@type":"WebPage","@id":"https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html"},"@type":"BlogPosting","url":"https://mlblog.singhsarbjit.com/2020/05/29/model_evaluation_metrics.html","headline":"Title","dateModified":"2020-05-29T00:00:00-05:00","datePublished":"2020-05-29T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"description":"Blog to share machine learning posts","mainEntityOfPage":{"@type":"WebPage","@id":"https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html"},"@type":"BlogPosting","url":"https://mlblog.singhsarbjit.com/machine_learning/2020/05/30/model_evaluation_metrics.html","headline":"Evaluation metrics for Linear Regression","dateModified":"2020-05-30T00:00:00-05:00","datePublished":"2020-05-30T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -85,8 +85,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-29T00:00:00-05:00" itemprop="datePublished">
-        May 29, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Evaluation metrics for Linear Regression</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-30T00:00:00-05:00" itemprop="datePublished">
+        May 30, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -96,25 +96,32 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/categories/#machine_learning">machine_learning</a>
+        
+      
+      </p>
+    
 
     
       
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/sarbjit87/ml-blog/tree/master/_notebooks/model_evaluation_metrics.ipynb" role="button" target="_blank">
+    <a href="https://github.com/sarbjit87/ml-blog/tree/master/_notebooks/2020-05-30-model_evaluation_metrics.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/sarbjit87/ml-blog/master?filepath=_notebooks%2Fmodel_evaluation_metrics.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/sarbjit87/ml-blog/master?filepath=_notebooks%2F2020-05-30-model_evaluation_metrics.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/sarbjit87/ml-blog/blob/master/_notebooks/model_evaluation_metrics.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/sarbjit87/ml-blog/blob/master/_notebooks/2020-05-30-model_evaluation_metrics.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -122,11 +129,12 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/model_evaluation_metrics.ipynb
+# file to edit: _notebooks/2020-05-30-model_evaluation_metrics.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -138,11 +146,13 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Assume we have following set of data</p>
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>X</th>
 <th>Y</th>
 </tr>
@@ -178,7 +188,8 @@ window.onload = wrap_img;
 <p>y = 15.14 + 0.37x</p>
 <p>We can solve this equation and get the value of $\hat y$</p>
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>X</th>
 <th>Y</th>
 <th>$ \hat Y$</th>
@@ -250,21 +261,21 @@ $$MAE = (\frac{1}{n})\sum_{i=1}^{n}\left | y_{i} - \hat y_{i} \right |$$
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y_BAR</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="n">MAE</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MAE using Python: %&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MAE using Python: %"</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
 
 <span class="c1"># Using Scikit-Learn Library</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
 
 <span class="n">MAE_sci</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">Y_BAR</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MAE using Sklearn: % &quot;</span><span class="p">,</span> <span class="n">MAE_sci</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MAE using Sklearn: % "</span><span class="p">,</span> <span class="n">MAE_sci</span><span class="p">)</span>
 
 <span class="c1"># Using Numpy</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">MAE_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_BAR</span><span class="p">)))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MAE using Numpy: % &quot;</span><span class="p">,</span> <span class="n">MAE_numpy</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MAE using Numpy: % "</span><span class="p">,</span> <span class="n">MAE_numpy</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -290,7 +301,8 @@ MAE using Numpy: %  1.3516666666666666
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>MSE (Mean Square Error) :-</strong></p>
 <p>
@@ -324,21 +336,21 @@ $$MSE = (\frac{1}{n})\sum_{i=1}^{n}\left ( y_{i} - \hat y_{i} \right )^2$$
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y_BAR</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">MSE</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MSE using Python: %&quot;</span><span class="p">,</span> <span class="n">MSE</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MSE using Python: %"</span><span class="p">,</span> <span class="n">MSE</span><span class="p">)</span>
 
 <span class="c1"># Using Scikit-Learn Library</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
 <span class="n">MSE_sci</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">Y_BAR</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MSE using Sklearn: % &quot;</span><span class="p">,</span> <span class="n">MSE_sci</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MSE using Sklearn: % "</span><span class="p">,</span> <span class="n">MSE_sci</span><span class="p">)</span>
 
 <span class="c1"># Using Numpy</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">MSE_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_BAR</span><span class="p">)))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;MSE using Numpy: % &quot;</span><span class="p">,</span> <span class="n">MSE_numpy</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"MSE using Numpy: % "</span><span class="p">,</span> <span class="n">MSE_numpy</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -364,7 +376,8 @@ MSE using Numpy: %  2.5155166666666653
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>RMSE (Root Mean Square Error) :-</strong></p>
 <p>
@@ -400,21 +413,21 @@ $$RMSE = \sqrt{(\frac{1}{n})\sum_{i=1}^{n}\left ( y_{i} - \hat y_{i} \right )^2}
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y_BAR</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">RMSE</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;RMSE using Python: %&quot;</span><span class="p">,</span> <span class="n">RMSE</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"RMSE using Python: %"</span><span class="p">,</span> <span class="n">RMSE</span><span class="p">)</span>
 
 <span class="c1"># Using Scikit-Learn Library</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
 <span class="n">RMSE_sci</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">Y_BAR</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;RMSE using Sklearn: % &quot;</span><span class="p">,</span> <span class="n">RMSE_sci</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"RMSE using Sklearn: % "</span><span class="p">,</span> <span class="n">RMSE_sci</span><span class="p">)</span>
 
 <span class="c1"># Using Numpy</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">RMSE_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_BAR</span><span class="p">))))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;RMSE using Numpy: % &quot;</span><span class="p">,</span> <span class="n">RMSE_numpy</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"RMSE using Numpy: % "</span><span class="p">,</span> <span class="n">RMSE_numpy</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -440,7 +453,8 @@ RMSE using Numpy: %  1.5860380407375685
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>RAE (Relative Absolute Error) :-</strong></p>
 <p>
@@ -473,7 +487,7 @@ $$RAE = \frac{\sum_{i=1}^{n}\left | y_{i} - \hat y_{i} \right |}{\sum_{i=1}^{n}\
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">RAE_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_BAR</span><span class="p">)))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y</span><span class="p">))))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;RAE using Numpy: % &quot;</span><span class="p">,</span> <span class="n">RAE_numpy</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"RAE using Numpy: % "</span><span class="p">,</span> <span class="n">RAE_numpy</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -497,7 +511,8 @@ $$RAE = \frac{\sum_{i=1}^{n}\left | y_{i} - \hat y_{i} \right |}{\sum_{i=1}^{n}\
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>RSE (Relative Squared Error) :-</strong></p>
 <p>
@@ -530,7 +545,7 @@ $$RSE = \frac{\sum_{i=1}^{n}\left ( y_{i} - \hat y_{i} \right )^2}{\sum_{i=1}^{n
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">RSE_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_BAR</span><span class="p">)))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y</span><span class="p">))))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;RSE using Numpy: % &quot;</span><span class="p">,</span> <span class="n">RSE_numpy</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"RSE using Numpy: % "</span><span class="p">,</span> <span class="n">RSE_numpy</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -558,7 +573,15 @@ $$RSE = \frac{\sum_{i=1}^{n}\left ( y_{i} - \hat y_{i} \right )^2}{\sum_{i=1}^{n
 
 
 
-  </div><a class="u-url" href="/2020/05/29/model_evaluation_metrics.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="sarbjit87/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/machine_learning/2020/05/30/model_evaluation_metrics.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">

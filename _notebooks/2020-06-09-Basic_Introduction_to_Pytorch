@@ -1,1 +1,295 @@
-{"cells":[{"metadata":{"_uuid":"d629ff2d2480ee46fbb7e2d37f6b5fab8052498a","collapsed":true,"_cell_guid":"79c7e3d0-c299-4dcb-8224-4455121ee9b0","trusted":false},"cell_type":"markdown","source":"**What is Pytorch?**\n\nPytorch is an open-source machine learning library developed by Facebook. It allows flexibility and speed for scientific computing for deep learning. Consider it as a replacement of Numpy so that the GPU capability can be used.","execution_count":null},{"metadata":{},"cell_type":"markdown","source":"**Tensors?**\n\nTensor is the core element of Pytorch and are basically a n-dimensional data container much like Numpy's n-dimensional array. A tensor could be a number, vector, matrix or a n-dimensional array.","execution_count":null},{"metadata":{"trusted":true},"cell_type":"code","source":"import torch\n\n# Scalar - Integer\nt1 = torch.tensor(5)\nprint(\"Tensor is {} with shape {} and data type {}\".format(t1, t1.shape, t1.dtype))","execution_count":null,"outputs":[]},{"metadata":{"trusted":true},"cell_type":"code","source":"# Scalar - Float\nt2 = torch.tensor(5.)\nprint(\"Tensor is {} with shape {} and data type {}\".format(t2, t2.shape, t2.dtype))","execution_count":null,"outputs":[]},{"metadata":{"trusted":true},"cell_type":"code","source":"# Vector\nt3 = torch.tensor([1., 2, 3])\nprint(\"Tensor is {} with shape {} and data type {}\".format(t3, t3.shape, t3.dtype))\n\nt4 = torch.tensor([1, 2, 3])\nprint(\"Tensor is {} with shape {} and data type {}\".format(t4, t4.shape, t4.dtype))","execution_count":null,"outputs":[]},{"metadata":{"trusted":true},"cell_type":"code","source":"# Matrix\nt5 = torch.tensor([[1., 2, 3],[4, 5, 6]])\nprint(\"Tensor is {} with shape {} and data type {}\".format(t5, t5.shape, t5.dtype))\n\nt6 = torch.tensor([[1, 2, 3],[4, 5, 6]])\nprint(\"Tensor is {} with shape {} and data type {}\".format(t6, t6.shape, t6.dtype))","execution_count":null,"outputs":[]},{"metadata":{},"cell_type":"markdown","source":"*Creating tensors using torch.Tensor & torch.tensor :*\n\ntorch.Tensor is the main Tensor class and everything is an instance of it. You can use it to create an empty tensor which is not possible with torch.tensor.  ","execution_count":null},{"metadata":{"trusted":true},"cell_type":"code","source":"# Creating tensors using torch.Tensor class \n\n# Create a tensor with 3 elements and random data\nt7 = torch.Tensor(3)\nprint(\"Tensor is {} with shape {} and data type {}\".format(t7, t7.shape, t7.dtype))\n\n# Matrix - 2X3 with random data\nt8 = torch.Tensor(2, 3)\nprint(\"Tensor is {} with shape {} and data type {}\".format(t8, t8.shape, t8.dtype))\n\n# 2X3 Matrix with data\nt9 = torch.Tensor([[1, 2], [3, 4]])\nprint(\"Tensor is {} with shape {} and data type {}\".format(t9, t9.shape, t9.dtype))","execution_count":null,"outputs":[]},{"metadata":{"trusted":true},"cell_type":"code","source":"# Arithemetic operations\n\na = torch.tensor(1)\nb = torch.tensor(2)\nc = torch.tensor(3)\ny = a + b + c\nprint(y)\n\n# Derivatives \na = torch.tensor(1.)\nb = torch.tensor(2., requires_grad=True)\nc = torch.tensor(3., requires_grad=True)\ny = a + b + c\nprint(y)\n","execution_count":null,"outputs":[]},{"metadata":{},"cell_type":"markdown","source":"Pytorch allows you to not only run the tensors in CPU but also in GPU for speed. Also, it got some unique features to track operations applied on them by forming backward graph for the tensors having requires_grad property set to True. \n\nSo basically, you can calculate the derivative of the \"y\" with respect to the other tensors having requires_grad by calling .backward method. Derivative is stored in a variable .grad associated with each tensor.","execution_count":null},{"metadata":{"trusted":true},"cell_type":"code","source":"y.backward()\n\nprint('dy/da:', a.grad)\nprint('dy/db:', b.grad)\nprint('dy/dc:', c.grad)","execution_count":null,"outputs":[]},{"metadata":{},"cell_type":"markdown","source":"**Numpy and Pytorch**\n\nWe can quickly create tensors from Numpy arrays.\n","execution_count":null},{"metadata":{"trusted":true},"cell_type":"code","source":"import numpy as np\n\n# Convert Numpy array to tensor\n\na1 = np.array([[1, 2, 4.], [5, 6, 7]])\n\nt = torch.from_numpy(a1)\n\nprint(\"Tensor is {} with shape {} and data type {}\".format(t, t.shape, t.dtype))","execution_count":null,"outputs":[]},{"metadata":{"trusted":true},"cell_type":"code","source":"# Convert tensor to Numpy array\n\na2 = t.numpy()\nprint(a2)","execution_count":null,"outputs":[]}],"metadata":{"kernelspec":{"language":"python","display_name":"Python 3","name":"python3"},"language_info":{"pygments_lexer":"ipython3","nbconvert_exporter":"python","version":"3.6.4","file_extension":".py","codemirror_mode":{"name":"ipython","version":3},"name":"python","mimetype":"text/x-python"}},"nbformat":4,"nbformat_minor":4}
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "_cell_guid": "79c7e3d0-c299-4dcb-8224-4455121ee9b0",
+    "_uuid": "d629ff2d2480ee46fbb7e2d37f6b5fab8052498a"
+   },
+   "source": [
+    "**What is Pytorch?**\n",
+    "\n",
+    "Pytorch is an open-source machine learning library developed by Facebook. It allows flexibility and speed for scientific computing for deep learning. Consider it as a replacement of Numpy so that the GPU capability can be used."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Tensors?**\n",
+    "\n",
+    "Tensor is the core element of Pytorch and are basically a n-dimensional data container much like Numpy's n-dimensional array. A tensor could be a number, vector, matrix or a n-dimensional array."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is 5 with shape torch.Size([]) and data type torch.int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "import torch\n",
+    "\n",
+    "# Scalar - Integer\n",
+    "t1 = torch.tensor(5)\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t1, t1.shape, t1.dtype))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is 5.0 with shape torch.Size([]) and data type torch.float32\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Scalar - Float\n",
+    "t2 = torch.tensor(5.)\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t2, t2.shape, t2.dtype))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is tensor([1., 2., 3.]) with shape torch.Size([3]) and data type torch.float32\n",
+      "Tensor is tensor([1, 2, 3]) with shape torch.Size([3]) and data type torch.int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Vector\n",
+    "t3 = torch.tensor([1., 2, 3])\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t3, t3.shape, t3.dtype))\n",
+    "\n",
+    "t4 = torch.tensor([1, 2, 3])\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t4, t4.shape, t4.dtype))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is tensor([[1., 2., 3.],\n",
+      "        [4., 5., 6.]]) with shape torch.Size([2, 3]) and data type torch.float32\n",
+      "Tensor is tensor([[1, 2, 3],\n",
+      "        [4, 5, 6]]) with shape torch.Size([2, 3]) and data type torch.int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Matrix\n",
+    "t5 = torch.tensor([[1., 2, 3],[4, 5, 6]])\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t5, t5.shape, t5.dtype))\n",
+    "\n",
+    "t6 = torch.tensor([[1, 2, 3],[4, 5, 6]])\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t6, t6.shape, t6.dtype))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*Creating tensors using torch.Tensor & torch.tensor :*\n",
+    "\n",
+    "torch.Tensor is the main Tensor class and everything is an instance of it. You can use it to create an empty tensor which is not possible with torch.tensor.  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is tensor([9.8755e-35, 1.4013e-45, 1.3633e-41]) with shape torch.Size([3]) and data type torch.float32\n",
+      "Tensor is tensor([[ 0.0000e+00, -2.0000e+00,  0.0000e+00],\n",
+      "        [-2.0000e+00,  8.4078e-45, -2.0000e+00]]) with shape torch.Size([2, 3]) and data type torch.float32\n",
+      "Tensor is tensor([[1., 2.],\n",
+      "        [3., 4.]]) with shape torch.Size([2, 2]) and data type torch.float32\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Creating tensors using torch.Tensor class \n",
+    "\n",
+    "# Create a tensor with 3 elements and random data\n",
+    "t7 = torch.Tensor(3)\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t7, t7.shape, t7.dtype))\n",
+    "\n",
+    "# Matrix - 2X3 with random data\n",
+    "t8 = torch.Tensor(2, 3)\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t8, t8.shape, t8.dtype))\n",
+    "\n",
+    "# 2X3 Matrix with data\n",
+    "t9 = torch.Tensor([[1, 2], [3, 4]])\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t9, t9.shape, t9.dtype))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tensor(6)\n",
+      "tensor(6., grad_fn=<AddBackward0>)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Arithemetic operations\n",
+    "\n",
+    "a = torch.tensor(1)\n",
+    "b = torch.tensor(2)\n",
+    "c = torch.tensor(3)\n",
+    "y = a + b + c\n",
+    "print(y)\n",
+    "\n",
+    "# Derivatives \n",
+    "a = torch.tensor(1.)\n",
+    "b = torch.tensor(2., requires_grad=True)\n",
+    "c = torch.tensor(3., requires_grad=True)\n",
+    "y = a + b + c\n",
+    "print(y)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Pytorch allows you to not only run the tensors in CPU but also in GPU for speed. Also, it got some unique features to track operations applied on them by forming backward graph for the tensors having requires_grad property set to True. \n",
+    "\n",
+    "So basically, you can calculate the derivative of the \"y\" with respect to the other tensors having requires_grad by calling .backward method. Derivative is stored in a variable .grad associated with each tensor."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "dy/da: None\n",
+      "dy/db: tensor(1.)\n",
+      "dy/dc: tensor(1.)\n"
+     ]
+    }
+   ],
+   "source": [
+    "y.backward()\n",
+    "\n",
+    "print('dy/da:', a.grad)\n",
+    "print('dy/db:', b.grad)\n",
+    "print('dy/dc:', c.grad)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Numpy and Pytorch**\n",
+    "\n",
+    "We can quickly create tensors from Numpy arrays.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tensor is tensor([[1., 2., 4.],\n",
+      "        [5., 6., 7.]], dtype=torch.float64) with shape torch.Size([2, 3]) and data type torch.float64\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "# Convert Numpy array to tensor\n",
+    "\n",
+    "a1 = np.array([[1, 2, 4.], [5, 6, 7]])\n",
+    "\n",
+    "t = torch.from_numpy(a1)\n",
+    "\n",
+    "print(\"Tensor is {} with shape {} and data type {}\".format(t, t.shape, t.dtype))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1. 2. 4.]\n",
+      " [5. 6. 7.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Convert tensor to Numpy array\n",
+    "\n",
+    "a2 = t.numpy()\n",
+    "print(a2)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
